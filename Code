@@ -1,0 +1,85 @@
+import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
+import Button from './Button'
+
+const Header = ({ title, onAdd, showAdd }) => {
+  const location = useLocation()
+
+  return (
+    <header className='header'>
+        <h1>{title}</h1>
+           {location.pathname === '/' && (
+                <Button
+                 color={showAdd ? 'red' : 'green'}
+                  text={showAdd ? 'Close' : 'Add'}
+                   onClick={onAdd}
+             />
+         )}
+    </header>
+  )
+
+Header.defaultProps = { //this is defult heaer
+  title: 'Task Tracker',
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+}
+
+//Index.css used for the style of the app
+To make buttons
+
+const Button = ({ color, text, onClick }) => //on click option comes up
+{
+  return (
+    <button onClick={onClick}
+      style={{ backgroundColor: color }}
+      className='btn'>
+    </button>)
+}
+
+Button.defaultProps = {
+  color: 'steelblue',
+}
+
+Button.propTypes = {
+  text: PropTypes.string,
+  color: PropTypes.string,
+  onClick: PropTypes.func,
+}
+
+Tasks //using an array
+  Each task = task but use hook called useState to cooperate them together
+  
+  Singular Task
+  => pull singualr compenet from Task in Tasks.js
+  // made cursor the pointer  
+      {task.text} <FaTimes style={(color; 'red', cursor: 'poiner'}}
+      
+      // fast forward 
+ To change ther eminds => App.js 
+  task.id ===id ?{ task, reminder: !taskToToggle.reminder }
+  
+        className={`task ${task.reminder ? 'reminder' : ''}`} //click green, not click, goes away
+  
+  Add.Task == to add a checkbox and remove the placeholder 1.5
+  
+  Setday set to target value and use current checked => return true false in Add Task
+  //add task and pass in obejct, the text, day, reminder. Save it to app.js
+  
+  Button toogle 
+  //app.js and in header add showDD TASK TO make any changes. 
+        return true and false. clothes vs add
+    
+    Build 
+    /npm run build => bring staic 
+    sudo npm i-g serv => trying to insert it globally 
+    //Production build helps keep the app going regalress of the folder being present 
+        
+   
+  
+  
+  
+
+ 
+  
